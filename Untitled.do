@@ -38,13 +38,11 @@ use "${data}_3", clear
 	replace male=0 if gender==2 | gender==3
 	label val male yesno
 	
-	gen female=1 if gender==2
-	replace female=0 if gender==1 | gender==3
-	label val female yesno
-
 // Race
 	gen race3=1 if race==1
 	replace race3=2 if race==2
 	replace race3=3 if race==5
 	label define race3 1 "White" 2 "Hispanic" 3 "Asian/Pacific Islander"
 	label val race3 race3
+
+reg engagescale i.male	
