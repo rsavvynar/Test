@@ -34,7 +34,7 @@ use "${data}_3", clear
 ********************************************************************************
 
 // Gender
-	gen male=1 if gender==1
+	gen male=1 if gender==1 | gender==3
 	replace male=0 if gender==2 | gender==3
 	label val male yesno
 	
